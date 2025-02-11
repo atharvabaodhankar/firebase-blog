@@ -5,30 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
+    <div class="cursor"></div>
+    <div class="loader">
+        <div class="loader-content">
+            <span>Loading</span>
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+
     <nav>
         <div class="nav-container">
-            <h1>My Blog</h1>
-            <button id="loginBtn">Admin Login</button>
+            <h1 class="logo">My Blog</h1>
+            <div class="nav-right">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="darkMode" class="dark-mode-input">
+                    <label for="darkMode" class="dark-mode-label"></label>
+                </div>
+                <button id="loginBtn" class="btn-primary">
+                    <span class="btn-text">Admin Login</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </div>
         </div>
     </nav>
 
     <!-- Admin Panel (only visible when logged in) -->
     <div id="adminPanel" class="hidden">
         <div class="admin-container">
-            <h2>Add New Blog Post</h2>
-            <form id="blogForm">
-                <input type="text" id="title" placeholder="Blog Title" required>
-                <textarea id="content" placeholder="Blog Content" required></textarea>
-                <button type="submit">Post Blog</button>
+            <h2 class="section-title">Create New Post</h2>
+            <form id="blogForm" class="blog-form">
+                <div class="form-group">
+                    <input type="text" id="title" required>
+                    <label for="title">Blog Title</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="content" required></textarea>
+                    <label for="content">Blog Content</label>
+                    <span class="focus-border"></span>
+                </div>
+                <button type="submit" class="btn-primary submit-btn">
+                    <span class="btn-text">Publish Post</span>
+                    <span class="btn-icon">↗</span>
+                </button>
             </form>
         </div>
     </div>
 
     <!-- Blog Posts Container -->
-    <div class="blog-container" id="blogPosts">
-        <!-- Blog posts will be dynamically added here -->
+    <main>
+        <div class="blog-container" id="blogPosts">
+            <!-- Blog posts will be dynamically added here -->
+        </div>
+    </main>
+
+    <!-- Add this login modal HTML -->
+    <div id="loginModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Admin Login</h2>
+                <button class="close-modal">&times;</button>
+            </div>
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" required>
+                    <label for="loginEmail">Email</label>
+                    <span class="focus-border"></span>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" required>
+                    <label for="loginPassword">Password</label>
+                    <span class="focus-border"></span>
+                </div>
+                <button type="submit" class="btn-primary login-btn">
+                    <span class="btn-text">Login</span>
+                    <span class="btn-icon">→</span>
+                </button>
+            </form>
+        </div>
     </div>
 
     <!-- Firebase SDK -->
