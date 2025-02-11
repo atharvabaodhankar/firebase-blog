@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>My Blog</h1>
+            <button id="loginBtn">Admin Login</button>
+        </div>
+    </nav>
+
+    <!-- Admin Panel (only visible when logged in) -->
+    <div id="adminPanel" class="hidden">
+        <div class="admin-container">
+            <h2>Add New Blog Post</h2>
+            <form id="blogForm">
+                <input type="text" id="title" placeholder="Blog Title" required>
+                <textarea id="content" placeholder="Blog Content" required></textarea>
+                <button type="submit">Post Blog</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Blog Posts Container -->
+    <div class="blog-container" id="blogPosts">
+        <!-- Blog posts will be dynamically added here -->
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="app.js"></script>
+</body>
+</html> 
