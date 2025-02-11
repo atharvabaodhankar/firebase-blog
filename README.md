@@ -55,3 +55,57 @@ For support, please open an issue in the GitHub repository or contact [your-cont
    
    # Edit config.js with your Firebase credentials
    ```
+
+## Deployment
+
+### Using Firebase Hosting (Recommended)
+
+1. Install Firebase CLI:
+   ```bash
+   npm install -g firebase-tools
+   ```
+
+2. Login to Firebase:
+   ```bash
+   firebase login
+   ```
+
+3. Initialize Firebase in your project:
+   ```bash
+   firebase init
+   ```
+   - Select "Hosting"
+   - Choose your project
+   - Set public directory to "."
+   - Configure as single-page app: "No"
+   - Set up automatic builds: "No"
+
+4. Deploy your website:
+   ```bash
+   firebase deploy
+   ```
+
+Your site will be live at: https://YOUR-PROJECT-ID.web.app
+
+### Security Considerations
+
+- Firebase Hosting automatically handles HTTPS
+- Your Firebase configuration is secure when using Firebase Hosting
+- Environment variables are managed through Firebase
+- Static files are served through Firebase's CDN
+
+### Alternative Deployment Options
+
+#### Netlify
+1. Connect your GitHub repository to Netlify
+2. Set environment variables in Netlify dashboard:
+   - Go to Site settings > Build & deploy > Environment
+   - Add your Firebase configuration variables
+3. Deploy from the Netlify dashboard
+
+#### Vercel
+1. Connect your GitHub repository to Vercel
+2. Set environment variables in Vercel dashboard:
+   - Go to Project Settings > Environment Variables
+   - Add your Firebase configuration variables
+3. Deploy from the Vercel dashboard
