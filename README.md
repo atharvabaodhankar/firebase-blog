@@ -1,3 +1,4 @@
+# Simple Firebase Blog
 
 ## Contributing
 
@@ -32,3 +33,25 @@ Common issues and solutions:
 ## Support
 
 For support, please open an issue in the GitHub repository or contact [your-contact-information].
+
+## Project Setup
+
+1. **Firebase Configuration**
+   - Create a new Firebase project at [Firebase Console](https://console.firebase.google.com)
+   - Enable Email/Password Authentication
+   - Create a Cloud Firestore database
+   - Copy `config.example.js` to `config.js`
+   - Add your Firebase configuration to `config.js`
+   
+   ⚠️ IMPORTANT: Never commit your `config.js` file containing real Firebase credentials to GitHub!
+
+2. **Environment Setup**
+   ```bash
+   # Clone the repository
+   git clone [your-repository-url]
+   
+   # Copy the example config
+   cp config.example.js config.js
+   
+   # Edit config.js with your Firebase credentials
+   ```
